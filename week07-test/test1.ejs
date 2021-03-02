@@ -1,0 +1,10 @@
+<% Object.keys(albumMap).forEach(key=>{ %>
+  <% if(albumMap[key]){ %>
+ <% for(let i of albumMap[key]){ %>
+<img  src="/users/img/<%=  i%>" >
+<% } %>
+<% } %>
+<% }) %>
+
+
+albumMap ={"default": [ ]}
