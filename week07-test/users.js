@@ -45,7 +45,7 @@ router.get("/albumNames/:album",function(req,res){
 })
 //ejs渲染
 router.get('/', function(req, res) {
-  res.locals.currentImages=albumMap.name;
+  res.locals.currentImages=albumMap.default;
   res.render('users',{ albumNames,currentAlbum});
 });
 module.exports = router;
