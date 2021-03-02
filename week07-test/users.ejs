@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" href="../photo.css">
+  </head>
+  <body>
+<div class="">
+<form class="" action="users/add" method="post">
+  <input type="text" name="album" value="">
+    <input type="submit" name="" value="添加相册">
+</form>
+    <form  action="/users/up" method="post" enctype="multipart/form-data">
+    <input type="file" name="img" value="">
+    <input type="hidden" name="album" value="<%= typeof album === "undefined" ? "default": "slectedAlbum" %>">
+    <input id="sub"  type="submit" name="" value="添加图片">
+    </form>
+</div>
+<div class="photo">
+<div class="album">
+<a href="">默认相册</a>
+<div class="albumlist">
+  <% albumNames.forEach(name=>{ %>
+  <a href=""><%= name %></a>
+ <% }) %>
+</div>
+</div>
+ <div class="img">
+<!-- 图片如何显示 -->
+<% if(currentImages){ %>
+  <% currentImages.forEach(name=>{ %>
+  <img src="/users/img/<%= name%>" >
+<% }) %>
+ <% } %>
+</div>
+</div>
+<script type="text/javascript">
+ const submit =document.querySelector("#sub")
+ const file =document.querySelector("input[type=file]")
+console.log(file);
+submit.addEventListener("click",event=>{
+       if (file.value=="") {
+             alert("请选择文件");
+            event.preventDefault();
+       }
+
+});
+</script>
+
+  </body>
+</html>
