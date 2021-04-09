@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<%- include("nav") -%>
+<div class="message">
+  <input type="text" name="" value="" onchange="say(event)">
+</div>
+  </body>
+ <script type="text/javascript"  src="/socket.io/socket.io.js"> </script> 
+<script type="text/javascript">
+const value=document.querySelector("input[type=text]")
+ const socket=io.connect();
+const message=document.querySelector(".message");
+//socket.on("say",date=>{console.log(date)})
+
+/*
+socket.on("send-say",function(date){
+const text=document.querySelector("input[type=text]")
+  text.value="";
+const p=document.createElement("p")
+p.innerText=date;
+message.appendChild(p);//添加
+})
+function say(event){
+ socket.emit("say",event.target.value);
+}
+
+*/
+
+</script>
+</html>
